@@ -6,3 +6,5 @@ Se agregaron animaciones como:
 Hero Animation
 Y los que están en los paquetes de animate_do
 
+
+![alt text](https://raw.githubusercontent.com/KitanoR/reto-zapato-flutter/master/assets/idea.jpg)
