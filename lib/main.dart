@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:zapatos/src/models/zapato_models.dart';
+import 'package:zapatos/src/pages/progress_page.dart';
 import 'package:zapatos/src/pages/zapata_page.dart';
 
 void main(){
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: ZapatoPage(),
+      home: ProgressPage(),
     );
   }
 }
