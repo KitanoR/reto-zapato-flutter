@@ -6,14 +6,14 @@ class ProgressBarWidget extends StatefulWidget {
   final Color colorPrimario;
   final Color colorSecundario;
   final double grosorPrimario;
-  final bool tieneFondo;
+  final bool transaparente;
 
   ProgressBarWidget({
     @required this.porcentaje,
     this.colorPrimario = Colors.blue, 
     this.colorSecundario = Colors.grey, 
     this.grosorPrimario = 7,
-    this.tieneFondo=false
+    this.transaparente=false
   });
 
   @override
@@ -41,20 +41,45 @@ class _ProgressBarWidgetState extends State<ProgressBarWidget>  with SingleTicke
   }
   @override
   Widget build(BuildContext context) {
+
+     controller.forward(from:0.0);
+
+    final diferenciaAnimar = widget.porcentaje - porcentajeAnterior;
+    porcentajeAnterior = widget.porcentaje;
+
+    final size = MediaQuery.of(context).size;
+    final calculo = (widget.porcentaje - diferenciaAnimar) + (diferenciaAnimar * controller.value);
     return Container(
       padding: EdgeInsets.all(10),
       width: double.infinity,
       height: double.infinity,
-      child: CustomPaint(
-        painter: _BarraProgreso(
-          widget.porcentaje,
-          widget.colorPrimario,
-          widget.colorSecundario,
-          widget.grosorPrimario,
-          widget.tieneFondo
-        ),
-      ),
+      child: Stack(
+        children: <Widget>[
+          Container(
+            height: widget.grosorPrimario,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: (widget.transaparente) ? Colors.transparent : widget.colorSecundario,
+              border: Border.all(
+                color: widget.colorSecundario
+              ),
+              borderRadius: BorderRadius.circular(widget.grosorPrimario)
+            ),
+          ),
+          AnimatedContainer(
+            duration: Duration(milliseconds: 200),
+            width: size.width * ( widget.porcentaje / 100 ),
+            height: widget.grosorPrimario,
+            decoration: BoxDecoration(
+              color: Colors.yellow,
+              borderRadius: BorderRadius.circular(widget.grosorPrimario)
+            ),
+          )
+        ],
+      )
     );
+
+
   }
 }
 
