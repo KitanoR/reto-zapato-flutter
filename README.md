@@ -1,4 +1,4 @@
-# zapatos dieseño
+# zapatos diseño
 
 Esto es es un reto de diseño para realizarlo con flutter.
 En este reto se utilizó providers para cambiar de estado de las tallas de los zapatos. También para seleccionar y cambiar de colores. 
