@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:zapatos/src/models/zapato_models.dart';
+import 'package:zapatos/src/pages/llama_loader.dart';
+import 'package:zapatos/src/pages/popup_page.dart';
 import 'package:zapatos/src/pages/progress_page.dart';
 import 'package:zapatos/src/pages/zapata_page.dart';
 
@@ -34,7 +36,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: ProgressPage(),
+      home: LlamaPage(),
     );
   }
 }
