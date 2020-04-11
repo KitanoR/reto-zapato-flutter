@@ -14,7 +14,6 @@ class LlamaPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Pulse(
-                  fr
                   infinite: true,
                   child: Image(
                     width: 100,
